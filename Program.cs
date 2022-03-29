@@ -6,13 +6,17 @@ namespace AlgorithmPrograms
     {
         static void Main(string[] args)
         {
-            Permutation obj = new Permutation();
-            String str = "SID";
-            int k = str.Length;
-            obj.Permute(str, 0, k - 1);
+            BinaryTree binaryTree = new BinaryTree();
+
+            binaryTree.Add(6);
+            binaryTree.Add(2);
+            binaryTree.Add(7);
+            binaryTree.Add(8);
+            binaryTree.Add(3);
+            
+
+            binaryTree.TravarsePreorder(binaryTree.Root);
 
         }
     }
-
-
 }
