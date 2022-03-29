@@ -1,43 +1,35 @@
 ﻿using System;
-namespace InsertionSort
+
+namespace AlgorithmPrograms
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] sortarray = new int[5] { 23, 67, 9, 22, 30 };
-            int n = 5, value, flag, i, j;
-            Console.WriteLine("Before Sorting");
+            int[] arr = { 78, 55, 45, 98, 13 };
 
-            for (i = 0; i < n; i++)
+            int temp;
+
+            for (int j = 0; j <= arr.Length - 2; j++)
             {
-                Console.Write(sortarray[i] + " ");
-
-            }
-            Console.WriteLine();
-
-            for (i = 0; i < n; i++)
-            {
-                value = sortarray[i];
-                flag = 0;
-                for (j = i - 1; j >= 0 && flag != 1;)
+                for (int i = 0; i <= arr.Length - 2; i++)
                 {
-                    if (value < sortarray[j])
+                    if (arr[i] > arr[i + 1])
                     {
-                        sortarray[j + 1] = sortarray[j];
-                        j--;
-                        sortarray[j + 1] = value;
+                        temp = arr[i + 1];
+                        arr[i + 1] = arr[i];
+                        arr[i] = temp;
                     }
-                    else
-                        flag = 1;
-
                 }
             }
-            Console.WriteLine("After sorting");
-            for (i = 0; i < n; i++)
+            Console.WriteLine("Sorted :");
+
+            foreach (int p in arr)
             {
-                Console.Write(sortarray[i] + " ");
+                Console.Write(p + " ");
             }
         }
+
+
     }
 }
