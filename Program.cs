@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace AlgorithmPrograms
 {
-    internal class Program
+      class Program
     {
         static void Main(string[] args)
         {
-           
+            AnagramandPalindrome obj = new AnagramandPalindrome();
+            obj.Check();
 
-            
-            PrimeNumber primeNumbers = new PrimeNumber();
-            primeNumbers.CheckPrimeNumber();
 
-            
-           
+
+
+
+
         }
     }
 }
