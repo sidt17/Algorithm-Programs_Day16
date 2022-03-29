@@ -1,22 +1,43 @@
 ﻿using System;
-
-namespace AlgorithmPrograms
+namespace InsertionSort
 {
     class Program
     {
         static void Main(string[] args)
         {
-            BinaryTree binaryTree = new BinaryTree();
+            int[] sortarray = new int[5] { 23, 67, 9, 22, 30 };
+            int n = 5, value, flag, i, j;
+            Console.WriteLine("Before Sorting");
 
-            binaryTree.Add(6);
-            binaryTree.Add(2);
-            binaryTree.Add(7);
-            binaryTree.Add(8);
-            binaryTree.Add(3);
-            
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(sortarray[i] + " ");
 
-            binaryTree.TravarsePreorder(binaryTree.Root);
+            }
+            Console.WriteLine();
 
+            for (i = 0; i < n; i++)
+            {
+                value = sortarray[i];
+                flag = 0;
+                for (j = i - 1; j >= 0 && flag != 1;)
+                {
+                    if (value < sortarray[j])
+                    {
+                        sortarray[j + 1] = sortarray[j];
+                        j--;
+                        sortarray[j + 1] = value;
+                    }
+                    else
+                        flag = 1;
+
+                }
+            }
+            Console.WriteLine("After sorting");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(sortarray[i] + " ");
+            }
         }
     }
 }
